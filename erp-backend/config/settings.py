@@ -97,11 +97,16 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'erp',
-        'USER': 'postgres',
-        'PASSWORD': 'judith',
-        'HOST': 'localhost',
+        'NAME': 'neondb',
+        'USER': 'neondb_owner',
+        'PASSWORD': 'npg_SkMC5xPQV3EX',
+        'HOST': 'ep-silent-forest-bad3xbde.c-8.eu-central-1.aws.neon.tech',
         'PORT': '5432',
+        'OPTIONS': {
+            'sslmode': 'require',
+            'channel_binding': 'require',
+            'options': '-c search_path=public',
+        },
     }
 }
 
